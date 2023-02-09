@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#SBATCH --output=long-job.out
+
+
+# This may vary per HPC system. At USC's hpc system
+# we use: source /usr/usc/R/default/setup.sh
+module load R
+
+Rscript easystratamh.txt

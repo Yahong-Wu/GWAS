@@ -1,0 +1,63 @@
+#################################################################################################################
+##### EasyStrata-script to create a Miami plot
+##### Winkler et al - EasyStrata - Figure 1
+##### EasyStrata version: 8.5
+##### Programmer: Thomas Winkler, 2014-04-14
+##### Contact: thomas.winkler@klinik.uni-regensburg.de
+#################################################################################################################
+
+DEFINE	--pathOut /home/student16/visualization
+		--strMissing NA
+		--strSeparator SPACE
+		--acolIn CHR;BP;MarkerName;Allele1;Allele2;Effect;StdErr;P.value
+		--acolInClasses numeric;numeric;character;character;character;numeric;numeric;numeric
+		--acolNewName CHR;BP;MarkerName;A1;A2;BETA;SE;P
+
+## MarkerName A1 A2 Freq.Hapmap.Ceu BETA SE.2gc P.2gc N
+
+EASYIN	--fileIn /home/student16/visualization/exampleTBall.txt
+		--fileInTag ALL
+EASYIN	--fileIn /home/student16/visualization/exampleceuTB.txt
+		--fileInTag CEU	
+#################################################################################################################
+#################################################################################################################
+## EASYSTRATA Scripting interface:
+START EASYSTRATA
+
+################
+### Merge two input files
+MERGEEASYIN --colInMarker MarkerName --blnMergeAll 0
+## MarkerName A1.WOMEN A2.WOMEN BETA.WOMEN  SE.WOMEN  P.WOMEN  N.WOMEN A1.MEN A2.MEN BETA.MEN  SE.MEN  P.MEN  N.MEN 
+
+################
+### Annotate data set with genetic position (chr, pos)
+#MERGE 	--colInMarker MarkerName
+#		--fileRef /home/student16/visualization/maphapmap.txt
+#		--colRefMarker SNPID
+#		--blnInAll 0 
+#		--blnRefAll 0
+## MarkerName p Chromosome Position
+## The mapfile contains columns SNPID, Chromosome and Position
+## We provide an example hapmap b36 map file on our website
+
+################		
+### Miami plot of sex-specific association P-Values (annotating known loci)
+MIAMIPLOT 	--colMIAMIPlotUp P.ALL
+			--colMIAMIPlotDown P.CEU
+			--colInChr CHR.ALL
+			--colInPos BP.ALL
+			--astrDefaultColourChrUp violetred;gray50
+			--astrDefaultColourChrDown steelblue;gray50
+			--numPvalOffset 0.05
+			--blnYAxisBreak 1
+			--numYAxisBreak 15
+## The fileAnnot is a list of top SNPs defining known regions.
+## It contains columns Chr, Pos and Colour.
+## We provide an annotation file 'WAIST_2009_2010_14_reported.txt' including known 
+## WHRadjBMI loci (Top SNPs from the 2009 Lindgren et al and from the 2010 Heid et al paper) 
+## on our website. 
+		
+STOP EASYSTRATA
+
+#################################################################################################################
+#################################################################################################################

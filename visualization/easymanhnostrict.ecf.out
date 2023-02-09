@@ -1,0 +1,49 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+|       EasyStrata     |     v8.6     |    20/June/2014      |
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+|  (C) 2013 Thomas Winkler, GNU General Public License, v3   |
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+|  For bug-report, please e-mail:                            |
+|  thomas.winkler@klinik.uni-regensburg.de                   |
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++++
+Starting EasyX: 2023-02-09 13:17:22 
+Running script  /home/student16/visualization/easymanhnostrict.ecf ...
+
++++++
+Getting list of input files ...
+Using:
+   +  /home/student16/visualization/exampleTBall.txt 
+
++++++
+Default output path is 
+/home/student16/visualization
+
++++++
+Performing validity check on 10 rows from each file :
+
+   +  exampleTBall.txt -> OK
+ Passed validity check!
+
++++++
+Processing file: exampleTBall.txt 
+ + Reading  /home/student16/visualization/exampleTBall.txt ... 
+   + MHPLOT 
+      --colMHPlot P.value 
+      --colInChr CHR 
+      --colInPos BP 
+      --numPvalOffset 0.05 
+      --blnYAxisBreak 1 
+      --numYAxisBreak 22 
+      --anumAddPvalLine 1e-6;5e-8 
+      --astrAddPvalLineCol orange;red 
+      --anumAddPvalLineLty 6;6 
+      --astrDefaultColourChr darkorchid;gray86
+
+
++++++
+Succesfully finished EasyX: 2023-02-09 13:19:40 
+Elapsed time: 2.299023381869 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+

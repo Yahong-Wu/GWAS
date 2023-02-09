@@ -1,0 +1,43 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+|       EasyStrata     |     v8.6     |    20/June/2014      |
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+|  (C) 2013 Thomas Winkler, GNU General Public License, v3   |
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+|  For bug-report, please e-mail:                            |
+|  thomas.winkler@klinik.uni-regensburg.de                   |
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++++
+Starting EasyX: 2023-02-09 13:55:43 
+Running script  /home/student16/visualization/easyqqcond.ecf ...
+
++++++
+Getting list of input files ...
+Using:
+   +  /home/student16/visualization/exampleTBall.txt 
+
++++++
+Default output path is 
+/home/student16/visualization
+
++++++
+Performing validity check on 10 rows from each file :
+
+   +  exampleTBall.txt -> OK
+ Passed validity check!
+
++++++
+Processing file: exampleTBall.txt 
+ + Reading  /home/student16/visualization/exampleTBall.txt ... 
+   + QQPLOT 
+      --acolQQPlot P.value 
+      --astrColour darkmagenta 
+      --anumSymbol 20 
+      --numPvalOffset 0.05
+
+
++++++
+Succesfully finished EasyX: 2023-02-09 13:58:02 
+Elapsed time: 2.31866292158763 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+

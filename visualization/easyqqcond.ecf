@@ -1,0 +1,29 @@
+#################################################################################################################
+##### EasyStrata-script to create a Miami plot
+##### Winkler et al - EasyStrata - Figure 1
+##### EasyStrata version: 8.5
+##### Programmer: Thomas Winkler, 2014-04-14
+##### Contact: thomas.winkler@klinik.uni-regensburg.de
+#################################################################################################################
+
+DEFINE	--pathOut /home/student16/visualization
+		--strMissing NA
+		--strSeparator SPACE
+    
+
+
+EASYIN	--fileIn /home/student16/visualization/exampleTBall.txt
+	
+#################################################################################################################
+#################################################################################################################
+## EASYSTRATA Scripting interface:
+START EASYSTRATA
+QQPLOT --acolQQPlot P.value
+	--astrColour darkmagenta
+	--anumSymbol 20
+	--numPvalOffset 0.05
+
+STOP EASYSTRATA
+
+#################################################################################################################
+#################################################################################################################

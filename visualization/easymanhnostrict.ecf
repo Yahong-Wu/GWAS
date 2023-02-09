@@ -1,0 +1,40 @@
+#################################################################################################################
+##### EasyStrata-script to create a Miami plot
+##### Winkler et al - EasyStrata - Figure 1
+##### EasyStrata version: 8.5
+##### Programmer: Thomas Winkler, 2014-04-14
+##### Contact: thomas.winkler@klinik.uni-regensburg.de
+#################################################################################################################
+
+DEFINE	--pathOut /home/student16/visualization
+		--strMissing NA
+		--strSeparator SPACE
+		--acolIn MarkerName;Allele1;Allele2;Freq1;P.value;N;CHR;BP
+		--acolInClasses character;character;character;numeric;numeric;numeric;integer;integer
+		
+## MarkerName A1 A2 Freq.Hapmap.Ceu BETA SE.2gc P.2gc N
+
+EASYIN	--fileIn /home/student16/visualization/exampleTBall.txt
+#################################################################################################################
+#################################################################################################################
+## EASYSTRATA Scripting interface:
+START EASYSTRATA
+
+MHPLOT --colMHPlot P.value
+--colInChr CHR
+--colInPos BP
+--numPvalOffset 0.05
+--blnYAxisBreak 1
+--numYAxisBreak 22
+#--fileAnnot /home/student16/visualization/exampleTBall.txt
+#--numAnnotPosLim 500000
+#--numAnnotPvalLim 1
+--anumAddPvalLine 1e-6;5e-8
+--astrAddPvalLineCol orange;red
+--anumAddPvalLineLty 6;6
+--astrDefaultColourChr darkorchid;gray86
+		
+STOP EASYSTRATA
+
+#################################################################################################################
+#################################################################################################################
